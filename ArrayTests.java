@@ -15,4 +15,40 @@ public class ArrayTests {
     int[] input1 = { };
     assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
   }
+
+  @Test
+  public void testReversed2(){
+    int[] input = {1, 2, 3, 4, 5};
+    int[] answer = {5, 4, 3, 2, 1};
+    assertArrayEquals(answer, ArrayExamples.reversed(input));
+  //so whats happening here is that it's copying the elemtns of the new empty array into the 
+  //arugment array, instead of the other way around. this results in an array of all zeroes
+  }
+
+  @Test
+  public void testReversedAll0(){
+  int[] input = {1, 2, 3, 4, 5};
+  int[] answer = {0, 0, 0, 0, 0};
+  assertArrayEquals(input, ArrayExamples.reversed(input));
+  }
+
+  @Test
+  public void testReverseInPlace2(){
+    int[] input = {1, 2, 3, 4, 5};
+    ArrayExamples.reverseInPlace(input);
+    int[] answer = {5, 4, 3, 2, 1};
+    assertArrayEquals(answer, input);
+    //copies the first half of the input array correctly, but has no copy so it's just copying the 
+    // second half to the first half, which will be the same cause the first half is just the 
+    //second half now
+  }
+
+  @Test
+  public void testReverseInPlace3(){
+    int[] input = {1, 2, 3, 4, 5};
+    ArrayExamples.reverseInPlace(input);
+    int[] answer = {5, 4, 3, 4, 5};
+  assertArrayEquals(input, answer);
 }
+  }
+
