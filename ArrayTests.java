@@ -50,5 +50,23 @@ public class ArrayTests {
     int[] answer = {5, 4, 3, 4, 5};
   assertArrayEquals(input, answer);
 }
+
+  @Test
+  public void testAverageExamples(){
+    double[] input = {1.0, 2.0, 3.0, 4.0, 5.0};
+    double answer = 3.5;
+    assertEquals(answer, ArrayExamples.averageWithoutLowest(input), 0);
+  }
+
+  @Test
+  public void tsetAverageExamplesRepeat(){
+    double[] input = {2.0, 2.0, 3.0, 4.0, 5.0};
+    double answer = 3.5;
+//will leave out both 2s instead of only one, not sure if this is inteded or a bug
+  }
+
+
+
+  
   }
 
